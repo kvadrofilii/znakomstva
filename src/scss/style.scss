@@ -7,7 +7,7 @@
 @import "base/base";
 
 // 3. Layout-related sections
-@import "layouts/main", "layouts/header", "layouts/footer";
+@import "layouts/container", "layouts/header", "layouts/footer";
 
 // 4. Components
 @import "components/button", "components/card", "components/edit-photo-person", "components/gender", "components/input",
