@@ -1,0 +1,43 @@
+.page404 {
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 15rem;
+		text-align: center;
+		margin: 150px 0 70px;
+
+		@media (min-width: $tablet-width) {
+			font-size: 30rem;
+			margin: 200px 0 150px;
+		}
+	}
+
+	&__text {
+		text-align: center;
+
+		@media (min-width: $tablet-width) {
+			font-size: 2rem;
+		}
+	}
+
+	&__button-wrapper {
+		margin: 30px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media (min-width: $tablet-width) {
+			font-size: 2rem;
+			margin: 50px 0;
+		}
+	}
+}
+
+.button.button_outline.page404__button {
+	width: 230px;
+}
