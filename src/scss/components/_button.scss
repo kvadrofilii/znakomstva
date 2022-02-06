@@ -1,0 +1,107 @@
+%button {
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 40px;
+	transition: all 0.5s;
+}
+
+.button {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 23px;
+	border-radius: 40px;
+	border: none;
+	font-size: 1.6rem;
+	line-height: 150%;
+	text-decoration: none;
+	color: $color-text;
+	text-align: center;
+	transition: hover 0.5s ease;
+	background: $color-button;
+	background: $linear-gradient;
+	flex-shrink: 0;
+	cursor: pointer;
+
+	&:active {
+		background: $color-active;
+	}
+
+	&:visited {
+		color: $color-text;
+	}
+
+	&_small {
+		@media (min-width: $tablet-width) {
+			width: 220px;
+			padding: 14px;
+			font-size: 1.4rem;
+		}
+	}
+
+	&_big {
+		@media (min-width: $tablet-width) {
+			width: 380px;
+		}
+	}
+
+	&_colored {
+		box-shadow: $color-button-shadow;
+		font-weight: 500;
+
+		&:hover {
+			background: $color-button-hovered;
+			background: $linear-gradient-hovered;
+		}
+
+		&:active {
+			background: $color-active;
+		}
+	}
+
+	&_outline {
+		width: 140px;
+		padding: 11px;
+		font-weight: 400;
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		&:hover::after {
+			left: 100%;
+			top: 100%;
+			bottom: 100%;
+			right: 100%;
+		}
+
+		&::before {
+			@extend %button;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+			background: $color-button;
+			background: $linear-gradient;
+		}
+
+		&::after {
+			@extend %button;
+			left: 1px;
+			top: 1px;
+			bottom: 1px;
+			right: 1px;
+			z-index: -1;
+			background: $color-background;
+		}
+	}
+}
+
+.button_big.button_outline {
+	width: 100%;
+	margin: 20px 0;
+
+	@media (min-width: $tablet-width) {
+		width: 140px;
+	}
+}
