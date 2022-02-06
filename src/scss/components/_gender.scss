@@ -1,0 +1,181 @@
+%button-gender_outline {
+	background-clip: text;
+	-webkit-background-clip: text;
+
+	&::before {
+		@extend %button;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
+
+	&::after {
+		@extend %button;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		z-index: -1;
+		background: $color-background;
+	}
+}
+
+.button-gender {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 17px;
+	border-radius: 40px;
+	border: none;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+
+.button-gender:first-child {
+	margin-right: 10px;
+}
+
+.man.button-gender {
+	background: $color-man;
+	background: $linear-gradient-man;
+	box-shadow: $color-button-shadow-man;
+
+	&:active {
+		background: $color-man;
+	}
+}
+
+.man.button-gender_colored {
+	&:hover {
+		background: $color-man-hovered;
+		background: $linear-gradient-man-hovered;
+	}
+
+	&:active {
+		background: $linear-gradient-man;
+	}
+}
+
+.woman.button-gender {
+	background: $color-woman;
+	background: $linear-gradient-woman;
+	box-shadow: $color-button-shadow;
+
+	&:active {
+		background: $color-woman;
+	}
+}
+
+.woman.button-gender_colored {
+	&:hover {
+		background: $color-woman-hovered;
+		background: $linear-gradient-woman-hovered;
+	}
+
+	&:active {
+		background: $linear-gradient-woman;
+	}
+}
+
+.button-gender__gender {
+	width: 36px;
+	height: 36px;
+}
+
+.man.button-gender__gender {
+	background-image: url(../../assets/svg/man.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.woman.button-gender__gender {
+	background-image: url(../../assets/svg/woman.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.man.button-gender_outline {
+	background-clip: text;
+	-webkit-background-clip: text;
+	box-shadow: none;
+
+	&:hover::after {
+		left: 100%;
+		top: 100%;
+		bottom: 100%;
+		right: 100%;
+	}
+
+	&::before {
+		@extend %button;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		background: $color-man;
+		background: $linear-gradient-man;
+	}
+
+	&::after {
+		@extend %button;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		z-index: -1;
+		background: $color-background;
+	}
+}
+
+.woman.button-gender_outline {
+	background-clip: text;
+	-webkit-background-clip: text;
+	box-shadow: none;
+
+	&:hover::after {
+		left: 100%;
+		top: 100%;
+		bottom: 100%;
+		right: 100%;
+	}
+
+	&::before {
+		@extend %button;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		background: $color-woman;
+		background: $linear-gradient-woman;
+	}
+
+	&::after {
+		@extend %button;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		z-index: -1;
+		background: $color-background;
+	}
+}
+
+.gender-wrapper {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (min-width: $tablet-width) {
+		width: 380px;
+	}
+}
