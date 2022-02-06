@@ -1,0 +1,101 @@
+%input__ico {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.input {
+	display: inline-block;
+	width: 100%;
+	padding: 23px 70px;
+	border-radius: 40px;
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.6rem;
+	color: $color-text;
+	background: $color-input;
+	border: none;
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+
+	&::placeholder {
+		color: $color-dark-text;
+	}
+
+	&__container {
+		width: 100%;
+
+		@media (min-width: $tablet-width) {
+			width: 380px;
+		}
+	}
+
+	&__wrapper {
+		width: 100%;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	&__text-alert {
+		display: none;
+		height: 20px;
+		text-align: center;
+		color: $color-error;
+	}
+}
+
+.textarea {
+	min-height: 180px;
+}
+
+.email.input__ico-before {
+	left: 30px;
+	@extend %input__ico;
+	background-image: url(../../assets/svg/email.svg);
+}
+
+.user.input__ico-before {
+	left: 30px;
+	@extend %input__ico;
+	background-image: url(../../assets/svg/user.svg);
+}
+
+.password.input__ico-before {
+	left: 30px;
+	@extend %input__ico;
+	background-image: url(../../assets/svg/password.svg);
+}
+
+.input_eye.input__ico-after {
+	right: 30px;
+	@extend %input__ico;
+	background-image: url(../../assets/svg/eye.svg);
+}
+
+.input_error-not.input,
+.input_error-valid.input {
+	box-shadow: inset 0px -2px 0px $color-error;
+}
+
+.input_error-not.input__ico-after,
+.input_error-valid.input__ico-after {
+	right: 30px;
+	@extend %input__ico;
+	background-image: url(../../assets/svg/error.svg);
+}
+
+.input_error-not.input__text-alert_not,
+.input_error-valid.input__text-alert_invalid {
+	display: block;
+}
+
+.input_error-not.input__container,
+.input_error-valid.input__container {
+	margin-bottom: 10px;
+}
