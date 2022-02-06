@@ -1,0 +1,18 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 70px;
+	padding-bottom: 30px;
+
+	&__item {
+		margin: 15px 0;
+	}
+
+	@media (min-width: $tablet-width) {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
