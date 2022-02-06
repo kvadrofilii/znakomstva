@@ -1,0 +1,41 @@
+.logo {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__ico {
+		height: 40px;
+		width: 40px;
+		background-image: url(../../assets/svg/logo.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		@media (min-width: $tablet-width) {
+			height: 60px;
+			width: 60px;
+		}
+	}
+
+	&__text {
+		margin-left: 20px;
+		font-weight: 500;
+		font-size: 22px;
+		color: $color-text;
+		text-decoration: none;
+
+		&:visited {
+			color: $color-text;
+		}
+	}
+
+	&__text_private {
+		display: none;
+
+		@media (min-width: $tablet-width) {
+			display: block;
+		}
+	}
+}
