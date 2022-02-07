@@ -7,6 +7,7 @@ import { logIn, userId } from '../../app/reducers/isAuth';
 
 export default function Login() {
 	const dispatch = useDispatch();
+	const { isAuth } = useSelector(state => state.isAuth);
 	const { users } = useSelector(state => state.users);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -41,18 +42,20 @@ export default function Login() {
 		inputValid(email, 'email');
 		inputValid(password, 'password');
 
-
 		if (email && validateEmail(email) && password && (password.length > 5)) {
 			const user = users.find(item => item.email === email);
 			if ((user) && (user.password === password)) {
 				dispatch(logIn());
 				dispatch(userId(user.id));
-				<Navigate to='persons' />
 			} else {
 				copyInputErrors.textError = 'login__error';
 				setInputErrors(copyInputErrors);
 			}
 		}
+	}
+
+	if (isAuth) {
+		return <Navigate to={'/'} />
 	}
 
 	return (

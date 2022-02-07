@@ -9,6 +9,7 @@ import { logIn, userId } from '../../app/reducers/isAuth';
 export default function Registration() {
 	const dispatch = useDispatch();
 	const { gender } = useSelector(state => state.gender);
+	const { isAuth } = useSelector(state => state.isAuth);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [firstName, setFirstName] = useState('');
@@ -59,15 +60,18 @@ export default function Registration() {
 			validateEmail(email) && password && (password.length > 5)) {
 			dispatch(logIn());
 			dispatch(userId(0));
-			localStorage.setItem('mail', email);
+			localStorage.setItem('email', email);
 			localStorage.setItem('password', password);
 			localStorage.setItem('firstName', firstName);
 			localStorage.setItem('gender', gender);
 			localStorage.setItem('lastName', lastName);
 			localStorage.setItem('about', about);
 			localStorage.setItem('age', +age);
-			<Navigate to='persons' />
 		}
+	}
+
+	if (isAuth) {
+		return <Navigate to={'/'} />
 	}
 
 	return (
