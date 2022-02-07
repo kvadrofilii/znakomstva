@@ -1,0 +1,22 @@
+.persons__title {
+	font-weight: 500;
+	font-size: 2.8rem;
+	text-align: center;
+}
+
+.persons__cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.sort-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 20px 0;
+}
+
+.persons__button {
+	margin: 10px 0;
+}
