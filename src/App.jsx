@@ -25,7 +25,7 @@ export default function App() {
       <Route path={'/'} element={<Layout />}>
         <Route element={<RequireAuth />}>
           <Route index element={<Persons />} />
-          <Route path={'profile/:id'} element={<Person />} />
+          <Route path={'/:id'} element={<Person />} />
         </Route>
         <Route element={<AuthPage />} >
           <Route path={'login'} element={<Login />} />
