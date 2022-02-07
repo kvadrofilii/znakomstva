@@ -15,6 +15,12 @@ export default function Header() {
 
 	function logOutButton() {
 		dispatch(logOut());
+		localStorage.removeItem('email');
+		localStorage.removeItem('password');
+		localStorage.removeItem('firstName');
+		localStorage.removeItem('lastName');
+		localStorage.removeItem('about');
+		localStorage.removeItem('age');
 		<Navigate to={'login'} />
 	}
 
