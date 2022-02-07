@@ -1,0 +1,30 @@
+.person {
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media (min-width: $tablet-width) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__content {
+		@media (min-width: $tablet-width) {
+			margin-left: 70px;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 2.4rem;
+
+		@media (min-width: $tablet-width) {
+			font-size: 3.2rem;
+		}
+	}
+
+	&__about-us {
+		font-weight: 500;
+		font-size: 1.8rem;
+	}
+}
