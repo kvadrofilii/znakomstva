@@ -48,6 +48,9 @@
 	&__user {
 		display: flex;
 		align-items: center;
-		margin-left: 50px;
+	}
+
+	&__name {
+		padding-right: 30px;
 	}
 }
