@@ -57,9 +57,9 @@ export default function Persons() {
 
 	return (
 		<div>
-			<Gender wrapper={'persons__input-wrapper'} />
+			<Gender wrapper={''} />
 
-			<div className={'sort-wrapper'}>
+			<div className={'persons__sort-wrapper'}>
 				<Button
 					onClick={sortAge}
 					className='button_small persons__button'
